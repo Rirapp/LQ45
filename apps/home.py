@@ -27,7 +27,7 @@ def app():
     st.subheader('Bagaimana Website ini Bekerja?')
     st.write('Website ini berkerja dan memprediksi harga-harga emiten dengan mengambil data dari 1 januari 2018 sampai data terbaru dan menggunakan pustaka prediksi buatan Facebook yang bernama Prophet.') 
     st.write('Prophet adalah paket open source  yang dirilis oleh tim inti Data Science  Facebook untuk memprediksi data deret waktu berdasarkan model aditif di mana tren non-linier sesuai dengan musiman tahunan, mingguan, dan harian, ditambah efek liburan sehingga menghasilkan hasil prediksi akurat dan otomatis.')
-    st.write('Keakuratan website prediksi ini dihitung dengan MAPE dengan nilai error 15 sampai 45 persen dan disertakan dengan tabel cross validation sebagai tabel pendukung.')
+    st.write('Keakuratan website prediksi ini dihitung dengan MAPE dengan nilai error 8 sampai 45 persen dan disertakan dengan tabel cross validation sebagai tabel pendukung.')
    
     STONKS = Image.open ('asset/stonks.png')
     st.image(STONKS, caption='Pasti Cuan !', width=700, output_format='auto')
