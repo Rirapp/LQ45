@@ -64,7 +64,7 @@ def app():
     df_train = df_train.rename(columns={"Date": "ds", "Close": "y"})
 
     daily_seasonality=True
-    m = Prophet()
+    m = Prophet(changepoint_prior_scale=0.10)
     m.fit(df_train)
     future = m.make_future_dataframe(periods=period)
     forecast = m.predict(future)
@@ -74,6 +74,11 @@ def app():
     ##Chart Prediksi##
     st.subheader(' Prediksi Harga')
     fig1 = plot_plotly(m, forecast)
+    fig1.update_layout(
+                  xaxis_rangeselector_font_color='black',
+                  xaxis_rangeselector_activecolor='#7289DA',
+                  xaxis_rangeselector_bgcolor='#FFFFFF',
+                 )
     st.plotly_chart(fig1)
     st.subheader('Komponen Prediksi')
     fig2 = m.plot_components(forecast)
@@ -81,7 +86,7 @@ def app():
     
     ##cross_validation##
     st.subheader('MAPE dan Tabel Cross Validation')
-    df_cv = cross_validation(m, initial='730 days', period='180 days', horizon = '365 days')
+    df_cv = cross_validation(m, initial='730 days', period='180 days', horizon = '100 days')
     df_cv.head()
     fig3 = plot_cross_validation_metric(df_cv, metric='mape')
     ##fig4 = plot_cross_validation_metric(df_cv, metric='rmse')
