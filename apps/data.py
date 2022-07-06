@@ -59,7 +59,7 @@ def app():
         st.plotly_chart(fig)
     plot_raw_data()
 
-    ##Prediksi##
+    ##Prediksi dan modeling data##
     df_train =data[['Date', 'Close']]
     df_train = df_train.rename(columns={"Date": "ds", "Close": "y"})
 
