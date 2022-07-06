@@ -47,7 +47,7 @@ def app():
     data = load_data(selected_stock)
     data_load_state.text("Loading data selesai!")
 
-    ##raw data##
+    ##data harga##
     st.subheader('Data Harga')
     st.write(data.tail())
     ##st.write(data)
