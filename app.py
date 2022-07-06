@@ -27,6 +27,6 @@ st.markdown("""
 
 app.add_app("Home", home.app)
 app.add_app("Prediksi", data.app)
-app.add_app("Video", model.app)
+app.add_app("Video Edukasi", model.app)
 # The main app
 app.run()
